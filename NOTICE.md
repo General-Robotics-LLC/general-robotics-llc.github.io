@@ -7,3 +7,4 @@ The General Robotics name, emblem, wordmark, artwork, photographs and written co
 Third-party material:
 
 - **Fraunces** (© The Fraunces Project Authors) and **Source Serif 4** (© The Source Serif 4 Project Authors) are distributed under the SIL Open Font License 1.1. The licence texts are in `assets/fonts/`.
+- **Wheeler**, the robot shown in the engineering drawings, is a heavily modified version of the original [ReallyUsefulRobot](https://github.com/XRobots/ReallyUsefulRobot) created by James Bruton's XRobots. ReallyUsefulRobot is © 2020 James Bruton and distributed under the MIT License.
