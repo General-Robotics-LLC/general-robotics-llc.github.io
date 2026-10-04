@@ -2,8 +2,8 @@
 
 The public website of General Robotics: one hand-written page in HTML, CSS and JavaScript. There is no build step and no framework. What is in this folder is what the browser receives.
 
-Live address (after launch): https://generalroboticsllc.com/
-Preview address: https://general-robotics-llc.github.io/
+Live address: https://generalroboticsllc.com/ (since 4 October 2026)
+GitHub's address for the same site: https://general-robotics-llc.github.io/ (forwards to the live address)
 
 ## Files
 
@@ -61,15 +61,20 @@ It needs Python 3 with Pillow and NumPy. It crops the painted picture out of eac
 
 The site is served by GitHub Pages from the `main` branch of this repository. Pushing to `main` publishes within a minute or two.
 
-### Launch checklist (moving generalroboticsllc.com here)
+### How the domain is connected
 
-1. In the repository's Pages settings, set the custom domain to `generalroboticsllc.com`. This adds a `CNAME` file.
-2. At GoDaddy, in the domain's DNS records, point the domain at GitHub Pages:
-   - four `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - a `CNAME` record for `www` pointing to `general-robotics-llc.github.io`
-   - leave the mail (`MX`) and verification (`TXT`) records as they are
-3. Wait for GitHub to issue the certificate, then tick "Enforce HTTPS".
-4. Check that `contact@generalroboticsllc.com` receives mail before the page is announced.
-5. Turn off or cancel the old GoDaddy website builder site once the new one is confirmed live.
+The domain `generalroboticsllc.com` is registered at GoDaddy and served by GitHub Pages. It was switched on 4 October 2026.
 
-Check GitHub's current instructions before step 2, in case the addresses have changed: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+- This repository's `CNAME` file and its Pages settings name `generalroboticsllc.com` as the custom domain.
+- GoDaddy's DNS records for the domain point at GitHub Pages:
+  - four `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+  - a `CNAME` record for `www` pointing to `general-robotics-llc.github.io` (GitHub forwards `www` to the bare domain)
+- The mail records (`MX`, `TXT`, `autodiscover`, `email`) belong to the Microsoft 365 email plan. Do not change them, or mail stops working.
+
+GitHub's current instructions, in case the addresses ever change: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+
+### Still to do after launch
+
+1. Tick "Enforce HTTPS" in the repository's Pages settings once GitHub has issued the certificate (up to 24 hours after the switch).
+2. Send a test message to `contact@generalroboticsllc.com` and confirm it arrives.
+3. Decide what to do with the old GoDaddy Websites + Marketing site. It is no longer connected to the domain, and was not cancelled.
