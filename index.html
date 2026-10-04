@@ -216,19 +216,34 @@
     <!-- =============================== Today =============================== -->
     <section class="section today" id="today" aria-labelledby="today-title">
       <div class="wrap today__grid">
-        <figure class="plate plate--drawing reveal">
-          <picture>
-            <source type="image/webp"
-                    srcset="assets/img/wheeler-cad-360.webp 360w, assets/img/wheeler-cad-720.webp 720w"
-                    sizes="(min-width: 60rem) 19rem, 60vw">
-            <img src="assets/img/wheeler-cad-360.jpg"
-                 srcset="assets/img/wheeler-cad-360.jpg 360w, assets/img/wheeler-cad-720.jpg 720w"
-                 sizes="(min-width: 60rem) 19rem, 60vw"
-                 width="720" height="1977" loading="lazy" decoding="async"
-                 alt="Engineering drawing of the whole Wheeler robot: a round covered base on two drive wheels, a tall vertical lift, and a head carrying a screen, a depth camera and an arm ending in a claw.">
-          </picture>
-          <figcaption>Engineering model · Wheeler, in development</figcaption>
-        </figure>
+        <div class="drawings" role="group" aria-label="Engineering drawings of Wheeler, our robot in development">
+          <figure class="plate plate--drawing reveal">
+            <picture>
+              <source type="image/webp"
+                      srcset="assets/img/wheeler-front-360.webp 360w, assets/img/wheeler-front-720.webp 720w"
+                      sizes="(min-width: 60rem) 15rem, 44vw">
+              <img src="assets/img/wheeler-front-360.jpg"
+                   srcset="assets/img/wheeler-front-360.jpg 360w, assets/img/wheeler-front-720.jpg 720w"
+                   sizes="(min-width: 60rem) 15rem, 44vw"
+                   width="720" height="1977" loading="lazy" decoding="async"
+                   alt="Engineering drawing of Wheeler from the front: a round covered base on two drive wheels with a lidar on top, a tall vertical lift, and a head carrying a touchscreen lettered Wheeler and a depth camera on a servo mount.">
+            </picture>
+            <figcaption>Front view</figcaption>
+          </figure>
+          <figure class="plate plate--drawing reveal">
+            <picture>
+              <source type="image/webp"
+                      srcset="assets/img/wheeler-rear-360.webp 360w, assets/img/wheeler-rear-720.webp 720w"
+                      sizes="(min-width: 60rem) 15rem, 44vw">
+              <img src="assets/img/wheeler-rear-360.jpg"
+                   srcset="assets/img/wheeler-rear-360.jpg 360w, assets/img/wheeler-rear-720.jpg 720w"
+                   sizes="(min-width: 60rem) 15rem, 44vw"
+                   width="720" height="1975" loading="lazy" decoding="async"
+                   alt="Engineering drawing of Wheeler from the rear: the arm ending in a claw, the open back of the head, and a power switch and meter set into the top of the base.">
+            </picture>
+            <figcaption>Rear view</figcaption>
+          </figure>
+        </div>
 
         <div class="today__text">
           <p class="label reveal">Where we are today</p>
@@ -244,8 +259,8 @@
           </p>
           <p class="note reveal">
             The paintings on this page are concept artwork. They express the future we aspire
-            to build, not products or specifications. The drawing is our current development
-            model, not a finished design.
+            to build, not products or specifications. The drawings show our current
+            development model, not a finished design.
           </p>
         </div>
       </div>

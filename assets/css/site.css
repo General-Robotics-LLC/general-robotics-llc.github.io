@@ -402,10 +402,12 @@ a:hover { text-decoration-thickness: 2px; }
 .today { background: var(--paper-deep); }
 .today__grid {
   display: grid;
-  grid-template-columns: minmax(0, 19rem) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 31rem) minmax(0, 1fr);
   align-items: center;
   gap: clamp(2.5rem, 7vw, 6rem);
 }
+/* Two engineering drawings side by side. */
+.drawings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(0.75rem, 2vw, 1.25rem); }
 .plate--drawing { border-color: var(--ink-soft); box-shadow: none; }
 .plate--drawing::before { border-color: color-mix(in srgb, var(--ink-soft) 45%, transparent); }
 .today__text { max-width: 38rem; }
@@ -476,7 +478,7 @@ a:hover { text-decoration-thickness: 2px; }
   .hero__grid, .today__grid, .contact__grid, .craft__intro { grid-template-columns: minmax(0, 1fr); }
   .hero__art { max-width: 34rem; }
   .crest { max-width: 15rem; margin-inline: auto; }
-  .plate--drawing { max-width: 16rem; margin-inline: auto; }
+  .drawings { max-width: 34rem; }
   .contact__grid { align-items: start; }
   .pillars { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
   .site-footer__legal { text-align: left; }

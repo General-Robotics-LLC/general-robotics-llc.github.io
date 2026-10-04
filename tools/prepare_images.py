@@ -5,7 +5,7 @@ Crops the painted picture out of each approved round 10 advertisement
 its own lettering in real text) and saves each image at several widths in
 WebP with a JPEG fallback.
 
-Also prepares the Wheeler engineering drawing and the founder portrait from
+Also prepares the two Wheeler engineering drawings and the founder portrait from
 the files in _source/.
 
 Run from the website folder:  python3 tools/prepare_images.py "/path/to/GR Branding/"
@@ -20,7 +20,7 @@ BRAND = sys.argv[1] if len(sys.argv) > 1 else "/mnt/user-data/uploads/GR Brandin
 ADS = BRAND + "Campaign Concepts/10 - Corrected Emblems and Red Flags/"
 EDEN = BRAND + "Logo Concepts/Taking Flight in Eden - No Suffix/01-eden-sparrow-no-suffix.png"
 # Kept beside the site, outside the published files.
-WHEELER = "_source/wheeler-whole.png"
+WHEELER = {"wheeler-front": "_source/wheeler-front.png", "wheeler-rear": "_source/wheeler-rear.png"}
 PORTRAIT = "_source/founder-portrait.jpg"
 OUT = "assets/img/"
 
@@ -63,7 +63,7 @@ def export(im, stem, widths, quality=82):
 
 
 def drawing(path, max_width=720):
-    """Load the Wheeler engineering drawing.
+    """Load one of the Wheeler engineering drawings.
 
     The drawing is rendered from the CAD model already in the site's ink and
     plate colours (see _source/README.md), so it only needs resizing.
@@ -106,7 +106,8 @@ if __name__ == "__main__":
     print("exposition", expo_pic.size, export(expo_pic, "exposition", [720, 1100, expo_pic.width]))
     eden = whiten_paper(Image.open(EDEN).convert("RGB"))
     print("eden", eden.size, export(eden, "eden-crest", [420, 720], quality=80))
-    wheeler = drawing(WHEELER)
-    print("wheeler", wheeler.size, export(wheeler, "wheeler-cad", [360, wheeler.width], quality=86))
+    for stem, path in WHEELER.items():
+        view = drawing(path)
+        print(stem, view.size, export(view, stem, [360, view.width], quality=86))
     round_portrait(PORTRAIT).save(OUT + "founder.jpg", quality=86, optimize=True)
 
