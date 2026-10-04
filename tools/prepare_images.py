@@ -20,7 +20,7 @@ BRAND = sys.argv[1] if len(sys.argv) > 1 else "/mnt/user-data/uploads/GR Brandin
 ADS = BRAND + "Campaign Concepts/10 - Corrected Emblems and Red Flags/"
 EDEN = BRAND + "Logo Concepts/Taking Flight in Eden - No Suffix/01-eden-sparrow-no-suffix.png"
 # Kept beside the site, outside the published files.
-WHEELER = "_source/wheeler-cad-revision11.png"
+WHEELER = "_source/wheeler-whole.png"
 PORTRAIT = "_source/founder-portrait.jpg"
 OUT = "assets/img/"
 
@@ -62,32 +62,19 @@ def export(im, stem, widths, quality=82):
     return sizes
 
 
-def engineering_plate(path, ink=(18, 39, 31), paper=(255, 253, 247), pad=0.07):
-    """Turn a CAD screenshot into a one-ink drawing on the site's plate colour.
+def drawing(path, max_width=720):
+    """Load the Wheeler engineering drawing.
 
-    The development model is drawn in working colours (red and grey). Mapping
-    its brightness onto forest-green ink keeps the page in the brand palette
-    and makes clear the picture is an engineering drawing, not a photograph.
-
-    Args:
-        path: CAD render on a white background.
-        ink: RGB colour for the darkest tone.
-        paper: RGB colour for white.
-        pad: margin around the model, as a fraction of its height.
+    The drawing is rendered from the CAD model already in the site's ink and
+    plate colours (see _source/README.md), so it only needs resizing.
 
     Returns:
-        PIL RGB image cropped to the model.
+        PIL RGB image no wider than ``max_width``.
     """
     im = Image.open(path).convert("RGB")
-    a = np.asarray(im).astype(float)
-    ys, xs = np.where(np.abs(a - 255).sum(2) > 12)
-    m = int((ys.max() - ys.min()) * pad)
-    box = (max(xs.min() - m, 0), max(ys.min() - m, 0), min(xs.max() + m, im.width), min(ys.max() + m, im.height))
-    a = np.asarray(im.crop(box)).astype(float)
-    lum = (0.299 * a[..., 0] + 0.587 * a[..., 1] + 0.114 * a[..., 2]) / 255.0
-    lum = np.clip((lum - 0.06) / 0.94, 0, 1) ** 0.9          # gentle contrast lift
-    out = np.array(ink) + (np.array(paper) - np.array(ink)) * lum[..., None]
-    return Image.fromarray(out.astype(np.uint8))
+    if im.width > max_width:
+        im = im.resize((max_width, round(im.height * max_width / im.width)), Image.LANCZOS)
+    return im
 
 
 def round_portrait(path, size=320):
@@ -119,7 +106,7 @@ if __name__ == "__main__":
     print("exposition", expo_pic.size, export(expo_pic, "exposition", [720, 1100, expo_pic.width]))
     eden = whiten_paper(Image.open(EDEN).convert("RGB"))
     print("eden", eden.size, export(eden, "eden-crest", [420, 720], quality=80))
-    wheeler = engineering_plate(WHEELER)
-    print("wheeler", wheeler.size, export(wheeler, "wheeler-cad", [360, wheeler.width], quality=84))
+    wheeler = drawing(WHEELER)
+    print("wheeler", wheeler.size, export(wheeler, "wheeler-cad", [360, wheeler.width], quality=86))
     round_portrait(PORTRAIT).save(OUT + "founder.jpg", quality=86, optimize=True)
 

@@ -1,3 +1,5 @@
 .DS_Store
 __pycache__/
 *.pyc
+# Working files for the Wheeler drawing (kept locally)
+_source/wheeler/
