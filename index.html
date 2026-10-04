@@ -1,0 +1,301 @@
+<!doctype html>
+<!--
+  General Robotics — home page.
+
+  One page: hero, purpose, standard (the motto), craft, today, contact.
+  Styling lives in assets/css/site.css and behaviour in assets/js/site.js.
+  See README.md for how the page is organised and how to change it.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>General Robotics — Engineering Excellence</title>
+  <meta name="description" content="General Robotics is pursuing embodied AI: capable machines, built in Pittsburgh, that give people the freedom to pursue a life of their own.">
+  <link rel="canonical" href="https://generalroboticsllc.com/">
+  <meta name="theme-color" content="#F6F3EB">
+
+  <!-- How the page appears when shared in messages and on social networks. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="General Robotics">
+  <meta property="og:title" content="General Robotics — A life of your own.">
+  <meta property="og:description" content="Capable machines, thoughtful design and craftsmanship, so that people have more freedom to pursue what matters to them.">
+  <meta property="og:url" content="https://generalroboticsllc.com/">
+  <meta property="og:image" content="https://generalroboticsllc.com/assets/img/share-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="General Robotics. A life of your own. Concept illustration of a person reading at home while a robot folds linen.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" data-emblem-icon>
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Load the two fonts used above the fold early, so text does not shift. -->
+  <link rel="preload" href="assets/fonts/Fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SourceSerif4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+
+  <!-- Marks the page as script-capable before first paint, so scroll reveals never flash. -->
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/site.js" defer></script>
+
+  <!-- Facts about the company for search engines. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "General Robotics",
+    "legalName": "General Robotics L.L.C.",
+    "url": "https://generalroboticsllc.com/",
+    "logo": "https://generalroboticsllc.com/assets/img/emblem-512.png",
+    "slogan": "Engineering Excellence",
+    "description": "General Robotics is pursuing embodied AI: intelligent machines that can understand the physical world and perform useful work within it.",
+    "email": "contact@generalroboticsllc.com",
+    "founder": { "@type": "Person", "name": "Kelsey J. Harvey", "jobTitle": "Founder" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Pittsburgh", "addressRegion": "PA", "addressCountry": "US" },
+    "sameAs": ["https://github.com/General-Robotics-LLC"]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== Header ============================== -->
+  <header class="site-header" data-header>
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top" aria-label="General Robotics, home">
+        <img class="brand__emblem" src="assets/img/emblem-b.svg" alt="" width="48" height="48" data-emblem>
+        <span class="brand__name">General Robotics</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="nav-toggle__label">Menu</span>
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Sections" data-nav>
+        <a href="#purpose">Purpose</a>
+        <a href="#standard">Standard</a>
+        <a href="#craft">Craft</a>
+        <a href="#today">Today</a>
+        <a class="site-nav__cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =============================== Hero =============================== -->
+    <section class="hero" id="top">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="label">Engineering Excellence</p>
+          <h1 class="hero__title">A life of your&nbsp;own.</h1>
+          <p class="lede">
+            General Robotics is pursuing embodied AI: intelligent machines that can understand
+            the physical world and perform useful work within it. Our ambition spans many
+            applications, with a special place for the home.
+          </p>
+          <div class="actions">
+            <a class="button" href="#purpose">Read our purpose</a>
+            <a class="button button--quiet" href="mailto:contact@generalroboticsllc.com">Write to us</a>
+          </div>
+        </div>
+
+        <figure class="plate hero__art">
+          <picture>
+            <source type="image/webp"
+                    srcset="assets/img/home-520.webp 520w, assets/img/home-800.webp 800w, assets/img/home-1036.webp 1036w"
+                    sizes="(min-width: 60rem) 40vw, 92vw">
+            <img src="assets/img/home-800.jpg"
+                 srcset="assets/img/home-520.jpg 520w, assets/img/home-800.jpg 800w, assets/img/home-1036.jpg 1036w"
+                 sizes="(min-width: 60rem) 40vw, 92vw"
+                 width="1036" height="1037" fetchpriority="high"
+                 alt="Concept illustration: a woman reads at a sunlit kitchen table with a cat asleep beside her, while a cream and forest-green household robot folds linen. A river city with yellow bridges shows through the window.">
+          </picture>
+          <figcaption>Concept artwork · An afternoon at home</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================== Purpose ============================== -->
+    <section class="section purpose" id="purpose" aria-labelledby="purpose-title">
+      <div class="wrap wrap--narrow">
+        <p class="label reveal">Our purpose</p>
+        <h2 class="statement reveal" id="purpose-title">
+          We believe progress should give people more freedom to pursue what matters to
+          them: to learn, create, care for one another, explore, and build lives of their
+          own choosing.
+        </h2>
+        <div class="ornament reveal" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <!-- ============================== Standard ============================= -->
+    <section class="section band" id="standard" aria-labelledby="standard-title">
+      <div class="wrap">
+        <div class="band__head">
+          <p class="label label--on-dark reveal">Our motto</p>
+          <h2 class="band__title reveal" id="standard-title">Engineering Excellence</h2>
+          <p class="band__lede reveal">
+            Our motto expresses the standard we are working toward: capable machines,
+            thoughtful design, and craftsmanship worthy of the people who will live and
+            work with them.
+          </p>
+        </div>
+
+        <ol class="pillars">
+          <li class="pillar reveal">
+            <span class="pillar__numeral" aria-hidden="true">I</span>
+            <h3>Capable machines</h3>
+            <p>Robots that understand the physical world and do useful work within it.</p>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar__numeral" aria-hidden="true">II</span>
+            <h3>Thoughtful design</h3>
+            <p>Engineering that belongs comfortably in the rooms where people live.</p>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar__numeral" aria-hidden="true">III</span>
+            <h3>Craftsmanship</h3>
+            <p>Made to a standard worthy of the people who will live and work with them.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =============================== Craft =============================== -->
+    <section class="section craft" id="craft" aria-labelledby="craft-title">
+      <div class="wrap">
+        <div class="craft__intro">
+        <div class="craft__text">
+          <p class="label reveal">Beauty and engineering</p>
+          <h2 class="reveal" id="craft-title">Parts of the same pursuit.</h2>
+          <p class="reveal">
+            Inspired by Pittsburgh’s tradition of making, the artistry of the great
+            international expositions, and the optimism of early technology, we see beauty
+            and engineering as parts of the same pursuit. We want to build a future that
+            cherishes what people already love while opening new possibilities.
+          </p>
+        </div>
+
+        <figure class="crest reveal">
+          <picture>
+            <source type="image/webp"
+                    srcset="assets/img/eden-crest-420.webp 420w, assets/img/eden-crest-720.webp 720w"
+                    sizes="(min-width: 60rem) 17rem, 60vw">
+            <img src="assets/img/eden-crest-420.jpg"
+                 srcset="assets/img/eden-crest-420.jpg 420w, assets/img/eden-crest-720.jpg 720w"
+                 sizes="(min-width: 60rem) 17rem, 60vw"
+                 width="720" height="1080" loading="lazy" decoding="async"
+                 alt="Engraved crest: a robot’s open hand releases a bird into a garden, framed by ribbons reading General Robotics and Engineering Excellence.">
+          </picture>
+        </figure>
+        </div>
+
+        <figure class="plate plate--wide reveal">
+          <picture>
+            <source type="image/webp"
+                    srcset="assets/img/exposition-720.webp 720w, assets/img/exposition-1100.webp 1100w, assets/img/exposition-1411.webp 1411w"
+                    sizes="(min-width: 76rem) 70rem, 92vw">
+            <img src="assets/img/exposition-1100.jpg"
+                 srcset="assets/img/exposition-720.jpg 720w, assets/img/exposition-1100.jpg 1100w, assets/img/exposition-1411.jpg 1411w"
+                 sizes="(min-width: 76rem) 70rem, 92vw"
+                 width="1411" height="791" loading="lazy" decoding="async"
+                 alt="Concept illustration: a grand glass-and-iron exposition hall hung with royal-red banners. An inventor, an older craftsman and a child gather around a wooden mechanical wing while a robot assists.">
+          </picture>
+          <figcaption>Concept artwork · The Grand Exposition</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =============================== Today =============================== -->
+    <section class="section today" id="today" aria-labelledby="today-title">
+      <div class="wrap today__grid">
+        <figure class="plate plate--drawing reveal">
+          <picture>
+            <source type="image/webp"
+                    srcset="assets/img/wheeler-cad-360.webp 360w, assets/img/wheeler-cad-671.webp 671w"
+                    sizes="(min-width: 60rem) 19rem, 60vw">
+            <img src="assets/img/wheeler-cad-360.jpg"
+                 srcset="assets/img/wheeler-cad-360.jpg 360w, assets/img/wheeler-cad-671.jpg 671w"
+                 sizes="(min-width: 60rem) 19rem, 60vw"
+                 width="671" height="1445" loading="lazy" decoding="async"
+                 alt="Engineering drawing of a mobile robot: a round wheeled base carrying a tall vertical lift, a head with a screen, and a small arm ending in a claw.">
+          </picture>
+          <figcaption>Engineering model · Wheeler, in development</figcaption>
+        </figure>
+
+        <div class="today__text">
+          <p class="label reveal">Where we are today</p>
+          <h2 class="reveal" id="today-title">At the beginning, and building.</h2>
+          <p class="reveal">
+            We are an early-stage company in Pittsburgh, Pennsylvania. Our first machine,
+            Wheeler, is a wheeled mobile robot with an arm on a vertical lift. It is in
+            engineering development: designed in CAD and driven in simulation.
+          </p>
+          <p class="reveal">
+            Alongside it we are writing the software that operates our robots, and doing the
+            research in perception and manipulation that a capable home robot needs.
+          </p>
+          <p class="note reveal">
+            The paintings on this page are concept artwork. They express the future we aspire
+            to build, not products or specifications. The drawing is our current development
+            model, not a finished design.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== Contact ============================== -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact__grid">
+        <div class="contact__text">
+          <p class="label reveal">Contact</p>
+          <h2 class="reveal" id="contact-title">Write to us.</h2>
+          <p class="reveal">
+            We are glad to hear from engineers, collaborators and anyone curious about what
+            we are building.
+          </p>
+          <p class="reveal">
+            <a class="email" href="mailto:contact@generalroboticsllc.com">contact@generalroboticsllc.com</a>
+          </p>
+          <p class="reveal">
+            <a class="text-link" href="https://github.com/General-Robotics-LLC" rel="noopener">General Robotics on GitHub</a>
+          </p>
+        </div>
+
+        <aside class="founder reveal" aria-label="Founder">
+          <img class="founder__photo" src="assets/img/founder.jpg" alt="Kelsey J. Harvey" width="160" height="160" loading="lazy" decoding="async">
+          <div>
+            <p class="founder__name">Kelsey J. Harvey</p>
+            <p class="founder__role">Founder</p>
+            <p class="founder__place">Pittsburgh, Pennsylvania</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== Footer ============================== -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a class="brand brand--footer" href="#top" aria-label="General Robotics, back to top">
+        <img class="brand__emblem" src="assets/img/emblem-b.svg" alt="" width="72" height="72" loading="lazy" data-emblem>
+        <span>
+          <span class="brand__name">General Robotics</span>
+          <span class="brand__motto">Engineering Excellence</span>
+        </span>
+      </a>
+      <p class="site-footer__legal">
+        © <span data-year>2026</span> General Robotics L.L.C. · Pittsburgh, Pennsylvania<br>
+        Paintings are concept artwork, not products or specifications.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
