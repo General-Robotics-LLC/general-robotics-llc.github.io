@@ -69,12 +69,14 @@ The domain `generalroboticsllc.com` is registered at GoDaddy and served by GitHu
 - GoDaddy's DNS records for the domain point at GitHub Pages:
   - four `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
   - a `CNAME` record for `www` pointing to `general-robotics-llc.github.io` (GitHub forwards `www` to the bare domain)
+- HTTPS is enforced. GitHub issues and renews the certificate for `generalroboticsllc.com` and `www.generalroboticsllc.com` automatically; nothing needs doing by hand.
 - The mail records (`MX`, `TXT`, `autodiscover`, `email`) belong to the Microsoft 365 email plan. Do not change them, or mail stops working.
+
+If the custom domain is ever removed and added again, GitHub commits "Delete CNAME" and "Create CNAME" to this repository by itself; run `git pull` before the next push.
 
 GitHub's current instructions, in case the addresses ever change: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
 
 ### Still to do after launch
 
-1. Tick "Enforce HTTPS" in the repository's Pages settings once GitHub has issued the certificate (up to 24 hours after the switch).
-2. Send a test message to `contact@generalroboticsllc.com` and confirm it arrives.
-3. Decide what to do with the old GoDaddy Websites + Marketing site. It is no longer connected to the domain, and was not cancelled.
+1. Send a test message to `contact@generalroboticsllc.com` and confirm it arrives.
+2. Decide what to do with the old GoDaddy Websites + Marketing site. It is no longer connected to the domain, and was not cancelled.
